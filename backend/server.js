@@ -19,7 +19,8 @@ app.use(cors({
     'http://127.0.0.1:3000',
     'http://127.0.0.1:3001',
     'http://barracudastars.ru',
-    'https://barracudastars.ru'
+    'https://barracudastars.ru',
+    'http://109.71.240.224'
   ],
   credentials: true
 }));
