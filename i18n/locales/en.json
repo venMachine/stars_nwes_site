@@ -1,0 +1,36 @@
+{
+  "site_name": "BarracudaStars",
+  "site_description": "The latest news about Hollywood stars, scandals, fashion and show business",
+  "categories": {
+    "all": "All",
+    "stars": "Stars",
+    "gossip": "Gossip",
+    "scandals": "Scandals",
+    "fashion": "Fashion",
+    "couples": "Couples",
+    "babies": "Babies"
+  },
+  "footer": {
+    "about": "About",
+    "advertising": "Advertising",
+    "contacts": "Contacts",
+    "copyright": "All rights reserved",
+    "disclaimer": "All trademarks belong to their respective owners."
+  },
+  "common": {
+    "read_more": "Read more",
+    "show_more": "Show more",
+    "loading": "Loading...",
+    "no_news": "No news yet. Coming soon!"
+  },
+  "news_feed": {
+    "title": "⭐ Hot Feed"
+  },
+  "search": {
+    "title": "Search news",
+    "placeholder": "Enter query...",
+    "button": "Search",
+    "no_results": "No results found for '{query}'.",
+    "found": "Found articles: {count}"
+  }
+}

@@ -1,0 +1,78 @@
+$primary: #FF1493;
+$primary-dark: #C51162;
+$primary-light: #FF69B4;
+
+$secondary: #F4F6F9;
+$secondary-light: #FFFFFF;
+
+$accent: #FFD700;
+$accent-dark: #DAA520;
+
+$success: #00C853;
+$warning: #FF6D00;
+$danger: #DC143C;
+$info: #00B0FF;
+
+$bg-dark: #F4F6F9;
+$bg-card: #FFFFFF;
+$bg-hover: #F8FAFC;
+$bg-overlay: rgba(0, 0, 0, 0.85);
+
+
+$text-primary: #1A1A1A;
+$text-secondary: #5A6A7A;
+$text-muted: #6C757D;
+$text-dark: #1a1a1a;
+
+$gradient-primary: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+$gradient-hot: linear-gradient(135deg, #FF1493 0%, #FF4500 100%);
+$gradient-exclusive: linear-gradient(135deg, #FFD700 0%, #FF1493 100%);
+$gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+
+$glow-primary: 0 0 20px rgba(255, 20, 147, 0.4);
+$glow-accent: 0 0 20px rgba(255, 215, 0, 0.4);
+$glow-text: 0 0 10px rgba(255, 20, 147, 0.3);
+
+$border-radius: 12px;
+$border-radius-lg: 16px;
+$border-radius-xl: 20px;
+$border-radius-sm: 8px;
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+$font-family-base: 'Georgia', 'Times New Roman', serif;
+$font-family-heading: 'Impact', 'Arial Black', sans-serif;
+$font-family-mono: 'Courier New', monospace;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3
+);
+
+$breakpoints: (
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px
+);
+
+$category-news: #2D6A4F;
+$category-gossip: #E67E22;
+$category-scandals: #C0392B;
+$category-fashion: #8E44AD;
+$category-couples: #2980B9;
+$category-babies: #D35400;
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;

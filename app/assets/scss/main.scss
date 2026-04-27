@@ -1,0 +1,58 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  background: #faf9f6;
+  color: #1a1a1a;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+ 
+}
+
+a, button, input, textarea {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.container {
+  @include container;
+}
+
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #332932;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.news-grid, .container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+

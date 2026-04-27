@@ -1,0 +1,148 @@
+@use 'variables' as *;
+
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($columns: 1, $gap: 20px) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+@mixin text-truncate($lines: 1) {
+  @if $lines == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@mixin screaming-text {
+  font-family: $font-family-heading;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+@mixin paparazzi-effect {
+  filter: contrast(1.1) brightness(0.95) saturate(1.1);
+  transition: all $transition-base;
+  
+  &:hover {
+    filter: contrast(1.2) brightness(1) saturate(1.2);
+  }
+}
+
+@mixin pulsating-badge($color: $primary) {
+  background: $color;
+  color: white;
+  padding: 4px 12px;
+  font-family: $font-family-mono;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}
+
+@mixin tabloid-border($color: $primary) {
+  border: 1px solid rgba($color, 0.3);
+  border-left: 4px solid $color;
+}
+
+@mixin glitch-effect {
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &::before {
+    color: $primary;
+    z-index: -1;
+    animation: glitch-1 0.3s infinite;
+  }
+  
+  &::after {
+    color: $accent;
+    z-index: -2;
+    animation: glitch-2 0.3s infinite;
+  }
+  
+  @keyframes glitch-1 {
+    0%, 100% { transform: translate(0); }
+    50% { transform: translate(-2px, 2px); }
+  }
+  
+  @keyframes glitch-2 {
+    0%, 100% { transform: translate(0); }
+    50% { transform: translate(2px, -2px); }
+  }
+}
+
+@mixin gossip-card {
+  background: $bg-card;
+  border: 1px solid rgba($primary, 0.15);
+  transition: all $transition-base;
+  
+  &:hover {
+    border-color: $primary;
+    box-shadow: $glow-primary;
+    transform: translateY(-4px);
+  }
+}
+
+@mixin media($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == 'xxl' {
+    @media (min-width: 1400px) {
+      @content;
+    }
+  }
+}
