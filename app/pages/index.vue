@@ -26,11 +26,7 @@
           <ArticleCard v-else :article="article" />
         </template>
       </div>
-      <div v-else-if="!loading" class="no-news">
-        <p>{{ $t('common.no_news') }}</p>
-      </div>
       <div v-if="loading" class="loading">{{ $t('common.loading') }}</div>
-
       <div v-if="hasMore" class="load-more">
         <button @click="loadMore" :disabled="loading" class="load-more__btn">
           {{ loading ? $t('common.loading') : $t('common.show_more') }}
@@ -201,14 +197,6 @@ useSeoMeta({
 
 .grid-full-width {
   grid-column: 1 / -1;
-}
-
-.no-news {
-  text-align: center;
-  padding: 3rem;
-  color: $text-muted;
-  background: rgba($primary, 0.05);
-  border: 1px dashed rgba($primary, 0.2);
 }
 
 .loading {
