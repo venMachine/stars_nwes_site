@@ -12,37 +12,31 @@
         {{ cat.name }}
       </button>
     </div>
-<!--     <div class="two-columns">
-      <div v-if="featuredArticle" class="featured-column">
-        <ArticleCard :article="featuredArticle" featured />
-      </div>
-      <aside class="sidebar">
-        <NewsFeed />
-      </aside>
-    </div> -->
+
     <aside class="sidebar">
-        <NewsFeed />
+      <NewsFeed />
     </aside>
-    
 
-    <div v-if="articlesToShow.length" class="news-grid">
-      <template v-for="article in articlesToShow" :key="article.id">
-        <div v-if="article.isFeatured" class="grid-full-width">
-          <ArticleCard :article="article" featured />
-        </div>
-        <ArticleCard v-else :article="article" />
-      </template>
-    </div>
-    <div v-else-if="!loading" class="no-news">
-      <p>{{ $t('common.no_news') }}</p>
-    </div>
-    <div v-if="loading" class="loading">{{ $t('common.loading') }}</div>
+    <ClientOnly>
+      <div v-if="articlesToShow.length" class="news-grid">
+        <template v-for="article in articlesToShow" :key="article.id">
+          <div v-if="article.isFeatured" class="grid-full-width">
+            <ArticleCard :article="article" featured />
+          </div>
+          <ArticleCard v-else :article="article" />
+        </template>
+      </div>
+      <div v-else-if="!loading" class="no-news">
+        <p>{{ $t('common.no_news') }}</p>
+      </div>
+      <div v-if="loading" class="loading">{{ $t('common.loading') }}</div>
 
-    <div v-if="hasMore" class="load-more">
-      <button @click="loadMore" :disabled="loading" class="load-more__btn">
-        {{ loading ? $t('common.loading') : $t('common.show_more') }}
-      </button>
-    </div>
+      <div v-if="hasMore" class="load-more">
+        <button @click="loadMore" :disabled="loading" class="load-more__btn">
+          {{ loading ? $t('common.loading') : $t('common.show_more') }}
+        </button>
+      </div>
+    </ClientOnly>
   </div>
 </template>
 
@@ -134,6 +128,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 </script>
+
 <style scoped lang="scss">
 @use '~/assets/scss/variables' as *;
 @use '~/assets/scss/mixins' as *;
@@ -146,8 +141,8 @@ useSeoMeta({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .categories__btn {
@@ -156,7 +151,8 @@ useSeoMeta({
   color: $text-primary;
   padding: 0.5rem 1.25rem;
   font-size: 0.85rem;
-  font-family: $font-family-heading;
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -173,15 +169,16 @@ useSeoMeta({
 
 .sidebar {
   min-width: 280px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .news-grid {
   padding: 0 5rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
+
 @media (max-width: 992px) {
   .news-grid {
     padding: 0 2rem;
@@ -194,9 +191,10 @@ useSeoMeta({
   .news-grid {
     padding: 0;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 }
+
 .grid-full-width {
   grid-column: 1 / -1;
 }
@@ -236,13 +234,6 @@ useSeoMeta({
   }
 }
 
-@media (max-width: 992px) {
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
-
 @media (max-width: 768px) {
   .categories {
     display: flex;
@@ -250,8 +241,8 @@ useSeoMeta({
     overflow-x: auto;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
     padding-bottom: 0.5rem;
   }
   
@@ -262,11 +253,6 @@ useSeoMeta({
     flex-shrink: 0;
   }
   
-  .news-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
   .grid-full-width {
     grid-column: 1;
   }
@@ -275,32 +261,5 @@ useSeoMeta({
     padding: 0.5rem 1.5rem;
     font-size: 0.85rem;
   }
-}
-.categories {
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.sidebar {
-  margin-bottom: 1rem;
-}
-
-.news-grid {
-  gap: 1rem;
-}
-
-@media (max-width: 768px) {
-  .categories {
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .news-grid {
-    gap: 0.75rem;
-  }
-}
-.categories__btn {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  font-weight: 600;
 }
 </style>
