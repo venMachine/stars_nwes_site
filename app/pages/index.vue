@@ -41,6 +41,10 @@
 </template>
 
 <script setup lang="ts">
+  
+definePageMeta({
+  ssr: false
+})
 import { ref, computed } from 'vue'
 import type { Article } from '~/components/ArticleCard.vue'
 import NewsFeed from '~/components/NewsFeed.vue'
