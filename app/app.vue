@@ -410,7 +410,7 @@ useHead({
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background: #faf9f6;
+  
   border-bottom: 1px solid #e0e0e0;
   padding: 1rem 0;
   top: 0;
