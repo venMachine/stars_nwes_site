@@ -403,11 +403,14 @@ useHead({
 
 
 .header {
+
+
+
   background-image: url('https://res.cloudinary.com/dztn4jtdc/image/upload/v1777467092/a7840db8d2f19c74063a715249538552_ezrmwt.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  //background: #faf9f6;
+  background: #faf9f6;
   border-bottom: 1px solid #e0e0e0;
   padding: 1rem 0;
   top: 0;
