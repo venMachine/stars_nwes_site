@@ -39,7 +39,9 @@ export default defineNuxtConfig({
       ]
     }
   },
-
+     devServer: {
+    port: 3001
+  },
   i18n: {
     locales: [
       { code: 'ru', name: 'Русский', iso: 'ru-RU', file: 'ru.json' },
@@ -71,10 +73,10 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBaseUrl: 'http://localhost:5000/api',
-      siteUrl:  'http://localhost:3000',
-      telegramChannelUrl: 'https://t.me/news_barracuda'
-    }
+    apiBaseUrl: 'https://barracudastars.ru/api',
+    siteUrl: 'https://barracudastars.ru',
+    telegramChannelUrl: 'https://t.me/news_barracuda'
+  }
   },
 
   nitro: {
@@ -82,7 +84,10 @@ export default defineNuxtConfig({
       cache: {
         driver: 'memory'
       }
-    }
+    },
+      server: {
+      port: 3001
+    } 
   },
 
   experimental: {

@@ -33,6 +33,8 @@
         </button>
       </div>
     </ClientOnly>
+
+
   </div>
 </template>
 
@@ -254,4 +256,33 @@ useSeoMeta({
     font-size: 0.85rem;
   }
 }
+
+.categories {
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar {
+  margin-bottom: 1rem;
+}
+
+.news-grid {
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .news-grid {
+    gap: 0.75rem;
+  }
+}
+.categories__btn {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 600;
+}
 </style>
+
