@@ -111,10 +111,11 @@ const switchLocale = (code: string) => {
   setLocale(code)
 }
 
+
 useHead({
- script: [
+  script: [
     {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-V22MMLFZHJ',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-EERDHR72NW',
       async: true,
       defer: true
     },
@@ -123,7 +124,7 @@ useHead({
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-V22MMLFZHJ');
+        gtag('config', 'G-EERDHR72NW');
       `,
       type: 'text/javascript'
     },
@@ -146,7 +147,6 @@ useHead({
     }
   ]
 })
-
 
 
 </script>
