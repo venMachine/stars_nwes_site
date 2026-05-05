@@ -7,7 +7,9 @@ const articleSchema = new mongoose.Schema({
   content: { type: String, required: true },
   published_to_yandex: { type: Boolean, default: false },
   published_to_google: { type: Boolean, default: false },
-  image: { type: String, default: 'https://images.unsplash.com/photo-1511512578047-dfb367046420' },
+  image: { type: String, default: '' },
+  yandex_news: { type: String, default: '' },
+  google_news: { type: String, default: '' },
   category: {
     id: Number,
     name: String,
@@ -28,7 +30,6 @@ const articleSchema = new mongoose.Schema({
   timestamps: true
 });
 
-
 articleSchema.pre('validate', async function() {
   if (this.title && !this.slug) {
     this.slug = this.title
@@ -37,4 +38,5 @@ articleSchema.pre('validate', async function() {
       .replace(/^-|-$/g, '');
   }
 });
+
 module.exports = mongoose.model('Article', articleSchema);

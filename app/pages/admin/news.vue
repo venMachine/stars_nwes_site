@@ -11,21 +11,24 @@ import { refreshNuxtData } from '#app'
 const config = useRuntimeConfig()
 const router = useRouter()
 
-
 const form = ref({
   title: '',
   excerpt: '',
   content: '',
   image: '',
-  category: { id: 1, name: 'Киберспорт', slug: 'esports' },
+  yandex_news: '',
+  google_news: '',
+  category: { id: 1, name: 'Звёзды', slug: 'stars' },
   author: null,
   tags: [],
-  isFeatured: false
+  isFeatured: false,
+  publishToTelegram: true
 })
 
 const saveArticle = async (articleData) => {
   try {
     const token = localStorage.getItem('token')
+    console.log('Сохраняем статью:', articleData)
     await $fetch(`${config.public.apiBaseUrl}/articles`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
@@ -35,6 +38,7 @@ const saveArticle = async (articleData) => {
     refreshNuxtData('news-feed')
     router.push('/admin/articles')
   } catch (err) {
+    console.error('Ошибка сохранения:', err)
     alert('Ошибка при сохранении')
   }
 }

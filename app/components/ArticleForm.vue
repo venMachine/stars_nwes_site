@@ -201,29 +201,30 @@ const generateNews = async () => {
       }
     });
     if (response.error) {
-     alert(`Ошибка: ${response.error}. Попробуйте другую категорию.`);
-    return;
+      alert(`Ошибка: ${response.error}. Попробуйте другую категорию.`);
+      return;
     }
     
     if (response.title) localData.value.title = response.title;
     if (response.excerpt) localData.value.excerpt = response.excerpt;
     if (response.content) localData.value.content = response.content;
-    if (response.image) localData.value.image = response.image;
-
+    if (response.image) {
+      console.log('Получена картинка от AI:', response.image)
+      localData.value.image = response.image
+    }
+    if (response.yandex_news) localData.value.yandex_news = response.yandex_news
+    if (response.google_news) localData.value.google_news = response.google_news
     
     if (response.tags) {
       if (Array.isArray(response.tags)) {
         localData.value.tags = response.tags;
         tagsInput.value = response.tags.join(', ');
       } else if (typeof response.tags === 'string') {
-        // Если пришла строка, разбиваем по запятой
         const tagsArray = response.tags.split(',').map(t => t.trim()).filter(Boolean);
         localData.value.tags = tagsArray;
         tagsInput.value = tagsArray.join(', ');
       }
     }
-    if (response.yandex_news) localData.value.yandex_news = response.yandex_news;
-    if (response.google_news) localData.value.google_news = response.google_news;
 
   } catch (err) {
     alert('Ошибка при генерации новости');
@@ -303,9 +304,9 @@ const processImage = async (url) => {
 
 const handleSubmit = async () => {
   saving.value = true;
-    saving.value = true;
   
-
+  console.log('Перед отправкой:', localData.value)
+  
   if (localData.value.image && localData.value.image.trim() && 
       !localData.value.image.includes('cloudinary.com')) {
     const processedUrl = await processImage(localData.value.image);
@@ -314,7 +315,7 @@ const handleSubmit = async () => {
 
   localData.value.tags = tagsInput.value.split(',').map(t => t.trim()).filter(Boolean);
   if (!localData.value.author) {
-    localData.value.author = { id: 1, name: 'GameNews', avatar: '' };
+    localData.value.author = { id: 1, name: 'BarracudaStars', avatar: '' };
   }
   
   await emit('submit', localData.value);

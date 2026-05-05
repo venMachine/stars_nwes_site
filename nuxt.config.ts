@@ -71,8 +71,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:5000/api',
-      siteUrl: process.env.SITE_URL || 'http://localhost:3001',
+      apiBaseUrl: 'http://localhost:5000/api',
+      siteUrl:  'http://localhost:3000',
       telegramChannelUrl: 'https://t.me/news_barracuda'
     }
   },

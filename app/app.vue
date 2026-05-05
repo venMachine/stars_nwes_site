@@ -112,7 +112,39 @@ const switchLocale = (code: string) => {
 }
 
 useHead({
- 
+ script: [
+    {
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-V22MMLFZHJ',
+      async: true,
+      defer: true
+    },
+    {
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-V22MMLFZHJ');
+      `,
+      type: 'text/javascript'
+    },
+    {
+      innerHTML: `
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+        ym(108852211, 'init', {
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true,
+          webvisor: true
+        });
+      `,
+      type: 'text/javascript'
+    }
+  ]
 })
 
 
@@ -130,7 +162,7 @@ useHead({
 }
 
 .header {
-  background: #faf9f6;
+
   border-bottom: 1px solid #e0e0e0;
   padding: 1.5rem 0;
   top: 0;
@@ -371,7 +403,11 @@ useHead({
 
 
 .header {
-  background: #faf9f6;
+  background-image: url('https://res.cloudinary.com/dztn4jtdc/image/upload/v1777467092/a7840db8d2f19c74063a715249538552_ezrmwt.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  //background: #faf9f6;
   border-bottom: 1px solid #e0e0e0;
   padding: 1rem 0;
   top: 0;
