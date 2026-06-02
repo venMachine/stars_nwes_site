@@ -353,7 +353,7 @@ useHead({
 
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 
   @media (max-width: 768px) {

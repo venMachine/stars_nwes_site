@@ -405,7 +405,7 @@ useHead({
 
 
 
-  background-image: url('https://res.cloudinary.com/dztn4jtdc/image/upload/v1777467092/a7840db8d2f19c74063a715249538552_ezrmwt.jpg');
+ // background-image: url('https://res.cloudinary.com/dztn4jtdc/image/upload/v1777467092/a7840db8d2f19c74063a715249538552_ezrmwt.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

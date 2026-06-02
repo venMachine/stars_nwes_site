@@ -6,28 +6,19 @@ const parser = new Parser();
 const categoryFeeds = {
   stars: [
     'https://news.google.com/rss/search?q=celebrity+news&hl=en-US&gl=US&ceid=US:en',
-    'https://okmagazine.com/rss/',
-    'https://feeds-api.dotdashmeredith.com/v1/rss/google/79365970-e87d-4fb6-966a-1c657b08f44f',
-    'https://www.tmz.com/rss.xml',
     'https://www.buzzfeed.com/tag/actors.xml',
     'https://www.ok.co.uk/celebrity-news/?service=rss',
-    'https://mastodon.social/tags/CelebrityNews.rss'
+   
   ],
   gossip: [
     'https://news.google.com/rss/search?q=celebrity+gossip+rumors+exclusive&hl=en-US&gl=US&ceid=US:en',
-    'https://okmagazine.com/rss/',
-    'https://feeds-api.dotdashmeredith.com/v1/rss/google/79365970-e87d-4fb6-966a-1c657b08f44f',
-    'https://www.tmz.com/rss.xml',
-    'https://www.buzzfeed.com/tag/actors.xml',
-    'https://www.ok.co.uk/celebrity-news/?service=rss'
+    'https://mastodon.social/tags/CelebrityNews.rss'
+  
   ],
   scandals: [
     'https://news.google.com/rss/search?q=celebrity+scandal+controversy&hl=en-US&gl=US&ceid=US:en',
-    'https://okmagazine.com/rss/',
     'https://feeds-api.dotdashmeredith.com/v1/rss/google/79365970-e87d-4fb6-966a-1c657b08f44f',
-    'https://www.tmz.com/rss.xml',
-    'https://www.buzzfeed.com/tag/actors.xml',
-    'https://www.ok.co.uk/celebrity-news/?service=rss'
+ 
   ],
   fashion: [
     'https://news.google.com/rss/search?q=celebrity+fashion&hl=en-US&gl=US&ceid=US:en',
@@ -35,17 +26,10 @@ const categoryFeeds = {
   ],
   couples: [
     'https://news.google.com/rss/search?q=celebrity+couples+dating+split&hl=en-US&gl=US&ceid=US:en',
-    'https://feeds-api.dotdashmeredith.com/v1/rss/google/79365970-e87d-4fb6-966a-1c657b08f44f',
-    'https://okmagazine.com/royals/rss/',
     'https://www.tmz.com/rss.xml',
-    'https://www.buzzfeed.com/tag/actors.xml',
-    'https://www.ok.co.uk/celebrity-news/?service=rss'
   ],
   babies: [
     'https://news.google.com/rss/search?q=celebrity+baby+OR+welcomes+OR+gave+birth+OR+expecting+OR+pregnant&hl=en-US&gl=US&ceid=US:en',
-    'https://okmagazine.com/royals/rss/',
-    'https://www.tmz.com/rss.xml',
-    'https://www.buzzfeed.com/tag/actors.xml'
   ]
 };
 
@@ -228,6 +212,7 @@ ${realNewsContext}
 - **НЕ ВЫДУМЫВАЙ НЕСУЩЕСТВУЮЩИХ ЗНАМЕНИТОСТЕЙ, ФИЛЬМОВ, ПРЕМЬЕР, СКАНДАЛОВ, РАЗВОДОВ, БЕРЕМЕННОСТЕЙ.**
 - Сохраняй все факты из контекста (имена звезд, названия фильмов/шоу, даты, цитаты).
 - **Самопроверка:** перед ответом проверь, все ли ключе факты подтверждаются контекстом. Если нет — верни ошибку.
+- Заголовок "title" должен быть кликабельным!!!!
 
 **ТРЕБОВАНИЯ К ФОРМАТУ:**
 - Включай гиперссылки (в формате <a href="URL">название источника</a>) на предоставленные в контексте источники. Если источник не указан в контексте, не добавляй ссылку.
