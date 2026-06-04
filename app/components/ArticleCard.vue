@@ -165,7 +165,7 @@ const formatViews = (views: number) => {
   position: relative;
   overflow: hidden;
   background: $secondary;
-  height: 450px;
+  height: 360px;
 }
 
 .article-card--featured .article-card__image {
